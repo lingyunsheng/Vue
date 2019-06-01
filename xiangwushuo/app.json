@@ -1,13 +1,12 @@
 {
   "pages": [
+    "pages/RedFlower/RedFlower",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/jifen/jifen"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    
   },
   "sitemapLocation": "sitemap.json"
 }
