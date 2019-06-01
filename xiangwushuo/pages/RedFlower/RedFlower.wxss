@@ -195,10 +195,22 @@ page {
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+.task_if{
+   display:inline-block;
+   float: left;
+   margin-right: 35rpx;
+   margin-left: 35rpx;
 }
 .task_info image{
-    display: block;
+    display: flex;
     align-items: center;
+    margin: auto 0;
+    margin-left: 25rpx;
+   
 }
 .task_info text {
     display: flex;
@@ -209,6 +221,7 @@ page {
     vertical-align: middle;
     font-size: 22rpx;
     color: #000;
+    
 }
 
 .task_info button {
@@ -223,6 +236,7 @@ page {
     font-size: 16rpx;
     color: orange;
     background-color: #fff;
+    border-radius: 4rpx solid orange;
 }
 
 .play {
@@ -289,4 +303,7 @@ page {
 
 .shop .shop_shop image {
     width: 100%;
+}
+.showRule{
+  display:none;
 }

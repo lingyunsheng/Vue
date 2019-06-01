@@ -4,5 +4,9 @@
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
-  "navigationStyle": "custom"
+  "navigationStyle": "custom",
+  "navigateToMiniProgramAppIdList": [
+    "wxeae00915600c9e68"
+  ]
+
 }
