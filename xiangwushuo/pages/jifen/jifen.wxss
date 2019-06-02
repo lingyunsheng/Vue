@@ -54,14 +54,18 @@ h1 {
     display: inline;
     color: #eee;
     font-size: 36rpx;
-    padding: 20rpx 30rpx;
+    padding: 20rpx 100rpx 20rpx 100rpx;
     line-height: 80rpx;
     height: 80rpx;
+    overflow: hidden;
+
 }
 
 .jifen_nav.active {
     color: #000;
     border-bottom: 4rpx solid yellowgreen;
+    height: 79rpx;
+    padding: 12rpx  10rpx;
 }
 
 .jilu {
