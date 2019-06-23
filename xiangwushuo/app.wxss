@@ -1,0 +1,5 @@
+page,view,image,swiper,scroll-view{
+  box-sizing: border-box;
+  background-color: #fff;
+
+}

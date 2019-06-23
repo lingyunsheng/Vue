@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/RedFlower/RedFlower",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/jifen/jifen",
+    "pages/invite/invite",
+    "pages/upload/upload"
+  ],
+  "window": {},
+  "sitemapLocation": "sitemap.json"
+}

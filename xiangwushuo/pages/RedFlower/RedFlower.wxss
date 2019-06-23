@@ -1,0 +1,309 @@
+/* pages/RedFlower/RedFlower.wxss */
+
+page {
+    background-color: #eee;
+}
+
+.main {
+    width: 100%;
+    height: 800rpx;
+    padding-top: 100rpx;
+}
+
+.header {
+    color: rgb(133, 68, 68);
+    margin-left: 10rpx;
+    margin-bottom: 25rpx;
+    background: transparent;
+}
+
+.flower_count {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    white-space: nowrap;
+    border: 4rpx solid #e5e5e5;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    border-radius: 100rpx;
+    overflow: hidden;
+}
+
+.flower_count image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    border: 3rpx solid #eee;
+}
+
+.todayCount {
+    color: #000;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-top: 10rpx;
+}
+
+.count {
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.flag {
+    color: #eee;
+    font-size: 50rpx;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 100rpx;
+}
+
+.totalCount {
+    color: #000;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-top: 10rpx;
+}
+
+.total_count {
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.flower_history .history {
+    color: #000;
+    font-size: 28rpx;
+    padding-top: 20rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rule {
+    margin-top: 100rpx;
+    background: transparent;
+    margin-right: 20rpx;
+}
+
+.rule .rule_tip {
+    float: right;
+    margin-right: 10rpx;
+    width: 150rpx;
+    height: 150rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+.rule image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background-color: rgb(235, 34, 168);
+}
+
+.rule button {
+    width: 100rpx;
+    height: 50rpx;
+    background-color: yellow;
+    color: #000;
+    border-radius: 15rpx;
+    text-align: center;
+    vertical-align: top;
+    font-size: 10rpx;
+    margin-top: -10px;
+}
+
+.qiandao {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    margin-top: 380rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100rpx;
+    border: 10rpx solid #fff;
+    border-radius: 30rpx;
+}
+
+.qiandao text {
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.qiandao image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.task {
+    margin-top: 10rpx;
+    border-top: 1px solid #666;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    /* background-color: #fff; */
+    margin-bottom: 10rpx;
+    border: 10rpx solid #fff;
+    border-radius: 10rpx;
+}
+
+.task_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.task_title {
+    flex: 10;
+    color: #000;
+    font-size: 36rpx;
+}
+
+.task_more {
+    flex: 3;
+    color: green;
+    font-size: 24rpx;
+}
+
+.task image {
+    width: 60rpx;
+    height: 60rpx;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.task_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+.task_if{
+   display:inline-block;
+   float: left;
+   margin-right: 35rpx;
+   margin-left: 35rpx;
+}
+.task_info image{
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+    margin-left: 25rpx;
+   
+}
+.task_info text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 22rpx;
+    color: #000;
+    
+}
+
+.task_info button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 100rpx;
+    height: 40rpx;
+    font-size: 16rpx;
+    color: orange;
+    background-color: #fff;
+    border-radius: 4rpx solid orange;
+}
+
+.play {
+    margin-top: 10rpx;
+    border-top: 1px solid #666;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    /* background-color: #fff; */
+    margin-bottom: 10rpx;
+    border: 10rpx solid #fff;
+    border-radius: 10rpx;
+
+}
+
+.play_header {
+    display: flex;
+    flex-direction: row;
+    padding: 5rpx;
+}
+
+.play_title {
+    flex: 10;
+    color: #000;
+    font-size: 36rpx;
+}
+
+.play_center {
+    flex: 3;
+    color: green;
+    font-size: 24rpx;
+}
+
+.play_game image {
+    width: 100%;
+}
+
+.shop {
+    margin-top: 10rpx;
+    border-top: 1px solid #666;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    /* background-color: #fff; */
+    margin-bottom: 50rpx;
+    border: 10rpx solid #fff;
+    border-radius: 10rpx;
+}
+
+.shop_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.shop_title {
+    flex: 10;
+    color: #000;
+    font-size: 36rpx;
+}
+
+.shop_center {
+    flex: 3;
+    color: green;
+    font-size: 24rpx;
+}
+
+.shop .shop_shop image {
+    width: 100%;
+}
+.showRule{
+  display:none;
+}

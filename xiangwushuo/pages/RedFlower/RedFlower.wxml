@@ -1,0 +1,129 @@
+<!-- pages/RedFlower/RedFlower.wxml -->
+<view class="container">
+  <view class="main" style="background:url('../../images/bg.jpg') no-repeat  ;background-size:100% 100%;">
+    <view class="header">我的红花</view>
+    <view class="flower_count" wx:for="{{flowerList}}" wx:key="{{index}}">
+      <view class="user_img">
+        <image src="../../images/user.jpg" />
+      </view>
+      <view class="today_count">
+        <text class="todayCount">今日红花数</text>
+        <text class="count">{{item.todayCount}}</text>
+      </view>
+      <span class="flag">|</span>
+      <view class="my_count">
+        <text class="totalCount">我的小红花</text>
+        <text class="total_count">{{item.totalCount}}</text>
+      </view>
+      <span class="flag">|</span>
+      <view class="flower_history">
+        <navigator url="../jifen/jifen?id==0">
+          <text class="history">红花记录</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="rule">
+      <view class="rule_tip">
+        <image src="../../images/user.jpg" />
+        <button class="rule_btn" bindtap="rule">活动规则</button>
+      </view>
+    </view>
+    <view class="qiandao">
+      <view class="first">
+        <image src="../../images/flower.png" />
+        <text>1天</text>
+      </view>
+      <view class="second">
+        <image src="../../images/flower.png" />
+        <text>2天</text>
+      </view>
+      <view class="three">
+        <image src="../../images/flower.png" />
+        <text>3天</text>
+      </view>
+      <view class="four">
+        <image src="../../images/flower.png" />
+        <text>4天</text>
+      </view>
+      <view class="five">
+        <image src="../../images/flower.png" />
+        <text>5天</text>
+      </view>
+      <view class="six">
+        <image src="../../images/flower.png" />
+        <text>6天</text>
+      </view>
+      <view class="seven">
+        <image src="../../images/flower.png" />
+        <text>7天开宝箱</text>
+      </view>
+    </view>
+  </view>
+  <view class="task">
+    <view class="task_header">
+      <text class="task_title">做任务赚红花</text>
+      <text class="task_more">查看更多</text>
+    </view>
+    <view class="task_info">
+      <view class="task_if" wx:for="{{taskList1}}" wx:key="{{index}}" open-type="share" bindtap="showToast">
+        <image src="{{item.src}}" />
+        <text>{{item.detail}}</text>
+        <button>{{item.btn}}</button>
+      </view>
+      <navigator url="../invite/invite">
+        <view class="task_if" wx:for="{{taskList2}}" wx:key="{{index}}" open-type="share" bindtap="onShareAppMessage">
+          <image src="{{item.src}}" />
+          <text>{{item.detail}}</text>
+          <button>{{item.btn}}</button>
+        </view>
+      </navigator>
+      <navigator url="../upload/upload">
+        <view class="task_if" wx:for="{{taskList3}}" wx:key="{{index}}" open-type="share" bindtap="onShareAppMessage">
+          <image src="{{item.src}}" />
+          <text>{{item.detail}}</text>
+          <button>{{item.btn}}</button>
+        </view>
+      </navigator>
+      <view class="task_if" wx:for="{{taskList4}}" wx:key="{{index}}" open-type="share" bindtap="onShareAppMessage">
+        <image src="{{item.src}}" />
+        <text>{{item.detail}}</text>
+        <button>{{item.btn}}</button>
+      </view>
+    </view>
+  </view>
+  <view class="play">
+    <view class="play_header">
+      <text class="play_title">享物说试玩中心</text>
+      <text class="play_center">试玩中心</text>
+    </view>
+    <view class="play_game">
+      <image mode="widthFix" src="../../images/play.png" bindtap="otherApp" />
+    </view>
+  </view>
+  <view class="shop">
+    <view class="shop_header">
+      <text class="shop_title">边买边赚花</text>
+      <text class="shop_center">多享淘商城</text>
+    </view>
+    <view class="shop_shop">
+      <image style="" mode="widthFix" src="../../images/shop.png" />
+    </view>
+
+  </view>
+  <view class="mask" wx:if="{{show}}" bindtap='close' catchtouchmove='maskTouchMove'></view>
+  <view class="showRule" wx:if="{{show}}" catchtouchmove='touchMove'>
+    <h1>活动规则</h1>
+    <view class="rule_item">
+    <h2>Q 如何获得奖励红花</h2>
+    <text>A 你可以点击签到小红花获得签到加花奖励。同时，当你获得其他类
+    型奖励时，你也需要手动点击小红花获得加花。签到奖励红花仅限当
+    日可领取，逾期作废</text>
+    </view>
+    <view class="rule_item">
+      <h2>Q 如何获得奖励红花</h2>
+    <text>A 你可以点击签到小红花获得签到加花奖励。同时，当你获得其他类
+    型奖励时，你也需要手动点击小红花获得加花。签到奖励红花仅限当
+    日可领取，逾期作废</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!-- pages/jifen/jifen.wxml -->
+<view class="main">
+    <view class="jifen" wx:for="{{flowerList}}" wx:key="{{index}}">
+        <h1>我的红花积分</h1>
+        <text>{{item.totalCount}}朵</text>
+        <button>冻结中0朵></button>
+    </view>
+</view>
+<view class="jifen_wrap">
+    <scroll-view class="nav" scroll-x>
+        <view bindtap="switchNav" class="jifen_nav {{index===currentNav? 'active':''}}" wx:for="{{jifenNav}}" wx:key="{{key}}" data-index="{{index}}">
+            {{item.name}}
+        </view>
+    </scroll-view>
+</view>
+<view hidden="{{currentNav!==0}}">还没有交易记录哦~</view>
+<view hidden="{{currentNav!==1}}">
+    <view class="jilu" wx:for="{{jiluList}}" wx:key="{{index}}">
+        <view class="left">
+            <text class="type">{{item.type}}</text>
+            <text class="date">{{item.date}}</text>
+        </view>
+        <view class="right">
+            <text class="count">+{{item.count}}红花</text>
+        </view>
+    </view>
+</view>
