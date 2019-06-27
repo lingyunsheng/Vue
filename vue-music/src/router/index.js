@@ -6,6 +6,7 @@ import Recommend from '../components/Recommend'
 import Singer from '../components/Singer'
 import Rank from '../components/Rank'
 import Search from '../components/Search'
+import Mine from '../components/Mine'
 
 Vue.use(Router)
 
@@ -42,8 +43,12 @@ export default new Router({
     },
     {
       path: '/Search',
-      name: '搜索',
       component: Search
+    },
+    {
+      path: '/Mine',
+      component: Mine
     }
+
   ]
 })

@@ -77,5 +77,9 @@ export default {}
 .love-menu{
   height: 50px;
   line-height: 50px;
+  font-size: 18px;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  color: #000;
+  margin-left: 18px;
 }
 </style>

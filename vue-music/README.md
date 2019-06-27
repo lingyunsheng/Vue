@@ -27,3 +27,12 @@ cnpm i stylus stylus-loader --save-dev
 - 配置 webpack.base.confi.js 下的alias
 
 - npm i element-ui -S
+
+
+git pull origin master --allow-unrelated-histories
+
+## 移动端适配
+npm install px2rem-loader  lib-flexible --save
+
+## swiper
+npm install swiper --save-dev
