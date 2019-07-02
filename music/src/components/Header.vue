@@ -2,10 +2,10 @@
   <div class="header">
     <h1 class="text">酷狗音乐</h1>
     <router-link tag="div" to="/Mine" class="mine">
-        <i class="iconfont el-icon-s-operation"></i>
+        <i class="iconfont icon-caidan"></i>
     </router-link>
     <router-link tag="div" to="/Search" class="search">
-      <i class="iconfont el-icon-search"></i>
+      <i class="iconfont icon-sousuo"></i>
     </router-link>
   </div>
 </template>

@@ -1,68 +1,111 @@
 <template>
-  <div class="recommend">
-    <div class="recommend-content">
-      <div v-if="recommends.length" class="slider-wrap">
-        <slider>
-          <div v-for="(item,index) in recommends" :key="index">
-            <a :href="item.linkUrl">
-              <img :src="item.picUrl">
-            </a>
-          </div>
-        </slider>
-      </div>
-      <div class="recommend-list">
-        <h1 class="list-title">热门歌单推荐</h1>
-        <ul>
-          <li v-for="(item,index) in discList" class="item" :key="index">
-            <div class="icon">
-              <img src="item.imgUrl" width="60" height="60">
+  <div class="recommend" ref="recommend">
+    <scroll class="recommend-content" :data="(radioLists, discList)" ref="scroll">
+      <div class="content">
+        <div v-if="recommends.length" class="slider-wrap">
+          <slider>
+            <div v-for="(item,index) in recommends" :key="index">
+              <a :href="item.linkUrl">
+                <img @load="loadImg" :src="item.picUrl" />
+              </a>
             </div>
-            <div class="text">
-              <h2 class="name" v-html="item.creator.name"></h2>
-              <p class="desc" v-html="item.dissname"></p>
-            </div>
-          </li>
-        </ul>
+          </slider>
+        </div>
+        <div class="recommend-list">
+          <h1 class="list-title radioL">热门电台</h1>
+          <ul>
+            <li v-for="(item,index) in radioLists" :key="index" class="item">
+              <div class="icon">
+                <img @load="loadImg" v-lazy="item.picUrl" width="170" height="193" />
+              </div>
+              <div class="text">
+                <h2 class="name" v-html="item.Ftitle"></h2>
+              </div>
+            </li>
+          </ul>
+          <h1 class="list-title songL">热门歌单推荐</h1>
+          <ul class="items">
+            <li v-for="(item,index) in discList" class="item" :key="index">
+              <div class="icon">
+                <img @load="loadImg" v-lazy="item.picUrl" width="170" height="193" />
+              </div>
+              <div class="text">
+                <h2 class="name" v-html="item.songListAuthor"></h2>
+                <p class="desc" v-html="item.songListDesc"></p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+      <div class="loading-container" v-show="!radioLists.length">
+        <loading></loading>
+      </div>
+    </scroll>
   </div>
 </template>
 <script>
-import {getRecommend, getDiscList} from 'api/recommend'
-import {ERR_OK} from 'api/config'
+import { getRecommend, getRadioList, getDiscList } from 'api/recommend'
+import { ERR_OK } from 'api/config'
 import Slider from 'base/slider/slider'
+import Scroll from 'base/scroll/scroll'
+import Loading from 'base/loading/loading'
 export default {
   data() {
     return {
       recommends: [],
-      discList: []
+      discList: [],
+      songLists: [],
+      radioLists: []
     }
   },
   // 钩子函数
   created() {
+    setTimeout(() => {
+      this._getRecommend()
+    }, 2000)
     // 调用方法
-    this._getRecommend()
+    setTimeout(() => {
+      this._getRadioList()
+    }, 2000)
+
     this._getDiscList()
   },
   methods: {
     _getRecommend() {
-      getRecommend().then((res) => {
+      getRecommend().then(res => {
         if (res.code === ERR_OK) {
           console.log(res.data.slider)
           this.recommends = res.data.slider
         }
       })
     },
-    _getDiscList() {
-      getDiscList().then((res) => {
+    _getRadioList() {
+      getRadioList().then(res => {
         if (res.code === ERR_OK) {
-          this.discList = res.data.discList
+          console.log(res.data.radioList)
+          this.radioLists = res.data.radioList
         }
       })
+    },
+    _getDiscList() {
+      getDiscList().then(res => {
+        if (res.code === ERR_OK) {
+          console.log(res.data.songList)
+          this.discList = res.data.songList
+        }
+      })
+    },
+    loadImg() {
+      if (!this.checkLoaded) {
+        this.$refs.scroll.refresh()
+        this.checkLoaded = true
+      }
     }
   },
   components: {
-    Slider
+    Slider,
+    Scroll,
+    Loading
   }
 }
 </script>
@@ -71,23 +114,51 @@ export default {
 .recommend {
   position: fixed;
   width: 100%;
-  top:130px;
+  top: 130px;
   bottom: 0;
   .recommend-content {
     height: 100%;
+    top: 0;
     overflow: hidden;
     .slider-wrap {
       position: relative;
       width: 100%;
       overflow: hidden;
+      margin: 0 auto;
     }
     .recommend-list {
-      h1 {
-        height: 65px;
+      .radioL {
+        height: 40px;
+        line-height: 40px;
         text-align: center;
         font-size: 22px;
         color: #409eff;
       }
+      .item {
+        display: inline-block;
+        float: left;
+        width: 50%;
+        padding: 0 1%;
+        box-sizing: border-box;
+        align-items: center;
+      }
+      .songL {
+        padding-top: 10px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 22px;
+        color: #409eff;
+      }
+      .items {
+        margin-top: 230px;
+      }
+    }
+    .loading-container {
+      position: absolute;
+      width: 100%;
+      top: 30%;
+      transform: translateY(-50%);
     }
   }
 }
