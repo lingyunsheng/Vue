@@ -10,7 +10,7 @@
       <span class="tab-link">排行</span>
     </router-link>
     <router-link tag="div" class="tab-item" to="/Search">
-      <span class="tab-link">视频</span>
+      <span class="tab-link">搜索</span>
     </router-link>
   </div>
 </template>
@@ -21,10 +21,11 @@ export default {
 <style scoped>
 .tab {
   display: flex;
-   height: 90px;
-  line-height: 90px;
+   height: 45px;
+  line-height: 45px;
   width: 100%;
   background: #409eff;
+  margin: 0 auto;
 }
 .tab-item {
   flex:1;

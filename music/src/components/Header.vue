@@ -4,7 +4,7 @@
     <router-link tag="div" to="/Mine" class="mine">
         <i class="iconfont icon-caidan"></i>
     </router-link>
-    <router-link tag="div" to="/Search" class="search">
+    <router-link tag="div" to="/SearchInfo" class="search">
       <i class="iconfont icon-sousuo"></i>
     </router-link>
   </div>

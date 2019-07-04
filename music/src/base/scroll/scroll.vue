@@ -33,8 +33,7 @@ export default {
       }
       this.scroll = new BScroll(this.$refs.wrapper, {
         probeType: this.probeType,
-        click: this.click,
-        scrollY: true
+        click: this.click
       })
     },
     // 代理

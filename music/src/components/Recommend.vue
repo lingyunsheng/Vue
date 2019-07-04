@@ -1,8 +1,8 @@
 <template>
   <div class="recommend" ref="recommend">
-    <scroll class="recommend-content" :data="(radioLists, discList)" ref="scroll">
-      <div class="content">
-        <div v-if="recommends.length" class="slider-wrap">
+    <scroll class="recommend-content" :data="radioLists" ref="scroll">
+      <div>
+        <div v-if="recommends.length" class="slider-wrapper" ref="sliderWrapper">
           <slider>
             <div v-for="(item,index) in recommends" :key="index">
               <a :href="item.linkUrl">
@@ -23,6 +23,8 @@
               </div>
             </li>
           </ul>
+        </div>
+        <div class="recommend-list songlist">
           <h1 class="list-title songL">热门歌单推荐</h1>
           <ul class="items">
             <li v-for="(item,index) in discList" class="item" :key="index">
@@ -41,6 +43,7 @@
         <loading></loading>
       </div>
     </scroll>
+    <router-view> </router-view>
   </div>
 </template>
 <script>
@@ -114,17 +117,19 @@ export default {
 .recommend {
   position: fixed;
   width: 100%;
-  top: 130px;
+  top: 89px;
   bottom: 0;
+  background: #ccc;
   .recommend-content {
+    width: 100%;
     height: 100%;
-    top: 0;
     overflow: hidden;
-    .slider-wrap {
+    .slider-wrapper {
       position: relative;
       width: 100%;
       overflow: hidden;
       margin: 0 auto;
+      top: 0;
     }
     .recommend-list {
       .radioL {
@@ -133,14 +138,25 @@ export default {
         text-align: center;
         font-size: 22px;
         color: #409eff;
+        margin-top: 10px;
       }
       .item {
         display: inline-block;
-        float: left;
+        // float: left;脱离文档流，滑动无效
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-between;
         width: 50%;
         padding: 0 1%;
         box-sizing: border-box;
         align-items: center;
+        margin-top: 10px;
+        .text {
+          .name {
+            font-size: 16px;
+            color:#000;
+          }
+        }
       }
       .songL {
         padding-top: 10px;
@@ -151,7 +167,19 @@ export default {
         color: #409eff;
       }
       .items {
-        margin-top: 230px;
+        margin-top: 10px;
+        .text {
+          .name {
+            font-size: 16px;
+            color:#000;
+          }
+          .desc {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 14px;
+          }
+        }
       }
     }
     .loading-container {
