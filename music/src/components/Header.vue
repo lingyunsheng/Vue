@@ -4,14 +4,18 @@
     <router-link tag="div" to="/Mine" class="mine">
         <i class="iconfont icon-caidan"></i>
     </router-link>
-    <router-link tag="div" to="/SearchInfo" class="search">
-      <i class="iconfont icon-sousuo"></i>
-    </router-link>
+    <div class="search">
+      <i class="iconfont icon-sousuo" @click="goto()"></i>
+    </div>
   </div>
 </template>
 <script>
 export default {
-
+  methods: {
+    goto() {
+      this.$router.push('/SearchInfo')
+    }
+  }
 }
 </script>
 

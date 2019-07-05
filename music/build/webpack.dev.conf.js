@@ -59,6 +59,22 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll
+    },
+    before(app) {
+      var url = 'https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp'
+      app.get('/api/getSearch', (req, res) => {
+        axios.get(url, {
+          headers: {
+            referer: 'https://y.qq.com/m/index.html',
+            host: 'c.y.qq.com'
+          },
+          params: req.query
+        }).then((response) => {
+          res.json(response.data)
+        }).catch((error) => {
+          console.log(error)
+        })
+      })
     }
   },
   plugins: [

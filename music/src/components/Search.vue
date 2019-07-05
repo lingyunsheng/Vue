@@ -5,9 +5,7 @@
         <div class="search-content">
           <el-autocomplete
             v-model="state"
-            :fetch-suggestions="querySearchAsync"
             placeholder="搜索歌曲、歌单、专辑"
-            @select="handleSelect"
             clearable
             class="el-autocomplete"
             icon="iconfont icon-sousuo"
@@ -65,7 +63,7 @@ export default {
 .search-container {
   position: fixed;
   width: 100%;
-  // height: 100%;
+  height: 100%;
   .scroll {
     height: 100%;
     overflow: hidden;
