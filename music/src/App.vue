@@ -1,32 +1,34 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <Tab></Tab>
-    <keep-alive>
-    <router-view/>
-    </keep-alive>
+    <Layout />
+    <Player />
+    <MiniPlayer />
+    <Playlist />
+    <ShareReader />
   </div>
 </template>
 
 <script>
-import Header from 'components/Header'
-import Tab from 'components/Tab'
+import Layout from "@/layout"
+import MiniPlayer from "@/components/mini-player"
+import Playlist from "@/components/playlist"
+import Player from "@/components/player"
+import ShareReader from "@/components/share-reader"
+
 export default {
-  components: {
-    Header,
-    Tab
-  }
+  metaInfo() {
+    return {
+      title: "欢迎来到酷Music"
+    }
+  },
+  components: { Layout, MiniPlayer, Playlist, Player, ShareReader }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0;
-  padding: 0;
+  height: 100%;
+  background-color: var(--body-bgcolor);
+  font-size: $font-size;
 }
 </style>
