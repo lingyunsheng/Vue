@@ -376,7 +376,7 @@
     "loader-fs-cache": "^1.0.2",
     "levn": "^0.3.0",
     "loader-runner": "^2.4.0",
-    "loader-utils": "^1.2.3",
+    "loader-utils": "^1.4.2",
     "locate-path": "^3.0.0",
     "json-parse-better-errors": "^1.0.2",
     "loglevel": "^1.6.1",
