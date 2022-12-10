@@ -242,7 +242,7 @@
     "execa": "^1.0.0",
     "expand-brackets": "^2.1.4",
     "expand-range": "^1.8.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "expand-tilde": "^2.0.2",
     "events": "^3.0.0",
     "external-editor": "^3.0.3",
